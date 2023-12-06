@@ -15,6 +15,9 @@ def div(operand1: float, operand2: float) -> float:
 def pow(operand1: float, operand2: float) -> float:
     return operand1 ** operand2
 
+def sqrt(operand1: float, operand2: float) -> float:
+    return operand1 ** (1.0/operand2)
+
 def read_error_messages(file_path,error_type,where):
     try:
         with open(file_path, 'r') as file:
@@ -28,3 +31,14 @@ def read_error_messages(file_path,error_type,where):
         return None
 
 
+def gerneral_aritmatic(operand1: float, operand2: float, function_aritmatic: object, operator: str) -> float:
+    if type(operand2) == type(operand2) == float:
+        return function_aritmatic(operand1,operand2)
+    operand1_str = "\nerror in operand 1:" + str(operand1)
+    operand2_str = "\nerror in  operand 2:" + str(operand2)
+    error = read_error_messages(file_path='Errors.json',error_type="type errors", where=operator)
+    buffer = error +\
+             f"{operand1_str if not isinstance(operand1, float) else ''}\
+               {(operand2_str if not isinstance(operand2, float) else '')}"
+    print(buffer)
+    return None
