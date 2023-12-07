@@ -1,10 +1,14 @@
 {
   "type errors": {
-    "add": "Unexpected value while using add aritmatic module, Invalid input. Please provide a valid value.",
-    "sub": "Unexpected value while using sub aritmatic module, Invalid input. Please provide a valid value.",
-    "mul": "Unexpected value while using mul aritmatic module, Invalid input. Please provide a valid value.",
-    "div": "Unexpected value while using div aritmatic module, Invalid input. Please provide a valid value.",
-    "pow": "Unexpected value while using pow aritmatic module, Invalid input. Please provide a valid value.",
+    "+": "Unexpected value while using add aritmatic module, Invalid input. Please provide a valid value.",
+    "-": "Unexpected value while using sub aritmatic module, Invalid input. Please provide a valid value.",
+    "*": "Unexpected value while using mul aritmatic module, Invalid input. Please provide a valid value.",
+    "/": "Unexpected value while using div aritmatic module, Invalid input. Please provide a valid value.",
+    "^": "Unexpected value while using pow aritmatic module, Invalid input. Please provide a valid value.",
     "sqrt": "Unexpected value while using sqrt aritmatic module, Invalid input. Please provide a valid value."
+  },
+  "input errors": {
+    "operand": "Unexpected value while checking, Invalid input. Please provide a valid value.",
+    "operator": "Unexpected operator after another operator, Invalid input. Please provide a valid one."
   }
 }
