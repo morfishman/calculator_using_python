@@ -11,6 +11,8 @@ def mul(operand1: float, operand2: float) -> float:
     return operand1 * operand2
 
 def div(operand1: float, operand2: float) -> float:
+    if operand2 == 0:
+        return None
     return operand1 / operand2
 
 def pow(operand1: float, operand2: float) -> float:

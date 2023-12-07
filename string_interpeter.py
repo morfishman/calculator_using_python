@@ -85,7 +85,8 @@ def calc_expreation(expression :list) -> float:
         operand2 = expression.pop(useble_index)
         operand1 = expression[useble_index - 1]
         expression[useble_index - 1] = gerneral_aritmatic(operand1=float(operand1), operand2=float(operand2),operator=operator, function_aritmatic= func)
-        if expression[useble_index - 1] == None:
+        if expression[useble_index - 1] == 'None':
+            print("cannot divide by zero")
             return
 
         return calc_expreation(expression)
