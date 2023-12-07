@@ -7,6 +7,11 @@ def first_index(string : list,charecture :str)-> int:
     return -1
 
 def input_check(expression :str) -> list:
+    if expression == "":
+        return []
+    if expression[0] == '-':
+        expression = '0'+expression
+
     expression = expression.replace(' ','')
     laxers_array = []
     buffer = ''
