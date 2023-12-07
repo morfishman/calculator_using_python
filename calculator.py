@@ -1,5 +1,6 @@
 import json
 
+
 def add(operand1: float, operand2: float) -> float:
     return operand1 + operand2
 
@@ -15,8 +16,6 @@ def div(operand1: float, operand2: float) -> float:
 def pow(operand1: float, operand2: float) -> float:
     return operand1 ** operand2
 
-def sqrt(operand1: float, operand2: float) -> float:
-    return operand1 ** (1.0/operand2)
 
 def read_error_messages(file_path,error_type,where):
     try:
@@ -26,9 +25,7 @@ def read_error_messages(file_path,error_type,where):
     except FileNotFoundError:
         print(f"Error: File not found at {file_path}")
         return None
-    except:
-        print(f"Error: erorr not found at {error_type} -> {where}")
-        return None
+
 
 
 def gerneral_aritmatic(operand1: float, operand2: float, function_aritmatic: object, operator: str) -> float:
@@ -42,3 +39,7 @@ def gerneral_aritmatic(operand1: float, operand2: float, function_aritmatic: obj
                {(operand2_str if not isinstance(operand2, float) else '')}"
     print(buffer)
     return None
+
+
+
+
