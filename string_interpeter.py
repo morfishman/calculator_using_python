@@ -19,7 +19,7 @@ def input_check(expression :str) -> list:
                 buffer = ''
                 laxers_array.append(laxer)
             else:
-                print(f"in operand {buffer}\n", read_error_messages(file_path='', error_type='input errors', where='operand'))
+                print(f"in operand {buffer}\n", read_error_messages(file_path='Errors.json', error_type='input errors', where='operand'))
                 return []
         else:
             print(f"in syntax {laxer}\n",read_error_messages(file_path='Errors.json', error_type='type errors', where='operator'))
@@ -40,13 +40,17 @@ def calc_expreation(expression :list) -> float:
     if len(expression) == 1:
         return float(expression[0])
     else:
+        pow_index = first_index(expression, '^')
         div_index = first_index(expression,'/')
         mul_index = first_index(expression,'*')
         add_index = first_index(expression,'+')
         sub_index = first_index(expression,'-')
         useble_index = None
         func = None
-        if mul_index != -1 and div_index  != -1:
+        if pow_index != -1:
+            useble_index = pow_index
+            func = pow
+        elif mul_index != -1 and div_index  != -1:
             if mul_index> div_index:
                 useble_index = div_index
                 func = div
