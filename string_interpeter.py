@@ -85,5 +85,3 @@ def calc_expreation(expression :list) -> float:
             return
 
         return calc_expreation(expression)
-
-
