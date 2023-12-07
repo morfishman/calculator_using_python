@@ -1,5 +1,11 @@
 from calculator import *
 
+def is_valid_float(s):
+    try:
+        float_value = float(s)
+        return True
+    except ValueError:
+        return False
 
 def first_index(string : list,charecture :str)-> int:
     for char in range(len(string)):
@@ -19,7 +25,7 @@ def input_check(expression :str) -> list:
         if laxer not in ['+','-','/','^','*']:
             buffer+=laxer
         elif buffer != '':
-            if buffer.isdigit():
+            if is_valid_float(buffer):
                 laxers_array.append(buffer)
                 buffer = ''
                 laxers_array.append(laxer)
@@ -30,7 +36,7 @@ def input_check(expression :str) -> list:
             print(f"in syntax {laxer}\n",read_error_messages(file_path='Errors.json', error_type='type errors', where='operator'))
             return []
     if buffer != '':
-        if buffer.isdigit():
+        if is_valid_float(buffer):
             laxers_array.append(buffer)
             buffer = ''
         else:
