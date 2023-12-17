@@ -33,7 +33,7 @@ def input_check(expression :str) -> list:
                 print(f"in operand {buffer}\n", read_error_messages(file_path='Errors.json', error_type='input errors', where='operand'))
                 return []
         else:
-            print(f"in syntax {laxer}\n",read_error_messages(file_path='Errors.json', error_type='type errors', where='operator'))
+            print(f"in syntax {laxer}\n",read_error_messages(file_path='Errors.json', error_type='input errors', where='operator'))
             return []
     if buffer != '':
         if is_valid_float(buffer):
